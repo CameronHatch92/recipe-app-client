@@ -21,7 +21,8 @@ export const fetchSearchSuccess = (results) => ({
 export const fetchSearch = (searchTerm) => (dispatch) => {
   dispatch(fetchRequest());
   return fetch(`${API_BASE_URL}/graphql`, {
-    method: 'GET'
+    method: 'POST',
+    
   })
   .then(res => normalizeResponseErrors(res))
   .then(res => res.json())
