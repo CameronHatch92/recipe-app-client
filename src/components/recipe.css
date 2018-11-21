@@ -1,0 +1,29 @@
+.recipe-body{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.recipe-pic{
+  width: 20%;
+  height: 100%;
+  margin: 0 30px;
+}
+
+.recipe-title{
+  margin: 10px;
+
+}
+
+.recipe-container{
+  border: 2px black solid;
+  margin: 10px;
+  padding: 10px;
+}
+
+.recipe-info{
+  display: flex;
+  flex-direction: column;
+}
+
+
