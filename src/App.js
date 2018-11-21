@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import SearchBar from './components/searchBar';
-import RecipeHolder from './components/reciperHolder';
+import Dashboard from './components/dashboard';
+import LogIn from './components/login';
+import Signup from './components/signup';
 import './App.css';
+import {Route, withRouter} from 'react-router-dom';
 
 class App extends Component {
   render() {
     return (
       <div>
-        <h1>Find Great Recipes</h1>
-        <SearchBar></SearchBar>
-        <RecipeHolder></RecipeHolder>
+        <Route exact path='/dashboard' component={Dashboard} />
+        <Route exact path='/' component={LogIn} />
+        <Route exact path='/signup' component={Signup} />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
