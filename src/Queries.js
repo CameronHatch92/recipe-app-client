@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 
-export const GET_RECIPES = gql`{
+export const GET_RECIPES = gql `{
   recipes{
     title
       image_url
@@ -10,7 +10,7 @@ export const GET_RECIPES = gql`{
   }    
 }`
 
-export const SEARCH = gql`
+export const SEARCH = gql `
   query Search($searchTerm: String!){
     search(searchTerm: $searchTerm){
       title
