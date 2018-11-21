@@ -11,13 +11,13 @@ class Login extends Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      loggedIn: loadAuthToken()
     }
   }
 
   render() {
-    let token = loadAuthToken();
-    if (token) {
+    if (this.state.loggedIn) {
       return <Redirect to='/dashboard' />
     }
     const { email, password } = this.state;
@@ -26,10 +26,9 @@ class Login extends Component {
         <h1>Login</h1>
         <Mutation mutation={LOGIN} variables={{ email, password }} update={(store, { loading, error, data }) => {
           const login = data.login;
-          console.log(error.message);
-          console.log(login);
-
-
+          if(login){
+            this.setState({loggedIn: login});
+          }
           saveAuthToken(login);
         }}>
           {(parsedLink, { data, error, loading }) => {

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './recipe.css';
+import {Mutation} from 'react-apollo';
+import {ADD_RECIPE} from '../Mutations';
 
 class Recipe extends Component{
 
@@ -16,13 +18,7 @@ deleteRecipe(e){
 }
 
   render(){
-    let buttonStatus;
-    if(this.props.button === 'save'){
-      buttonStatus = <button onClick={(e) => this.saveRecipe(e)}>Save Recipe</button>
-    }
-    if(this.props.button === 'delete'){
-      buttonStatus = <button onClick={(e) => this.deleteRecipe(e)}>Delete Recipe</button>
-    }
+
     return(
       <div className='recipe-container'>
         <h3 className='recipe-title'>{this.recipe.title}</h3>
@@ -31,7 +27,7 @@ deleteRecipe(e){
           <div className='recipe-info'>
             <a href={this.recipe.source_url} target={'blank'}>Get the recipe here!</a>
             <p>More from <a href={this.recipe.publisher_url} target={'blank'}>{this.recipe.publisher}</a></p>
-            {buttonStatus}
+            <button>Delete</button>
           </div>
         </div>
       </div>
