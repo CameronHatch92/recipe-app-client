@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchBar from './searchBar';
+import Search from './search';
 import RecipeHolder from './reciperHolder';
 
 class Dashboard extends Component {
@@ -7,7 +7,7 @@ class Dashboard extends Component {
     return (
       <div>
         <h1>Find Great Recipes</h1>
-        <SearchBar></SearchBar>
+        <Search></Search>
         <RecipeHolder></RecipeHolder>
       </div>
     );
